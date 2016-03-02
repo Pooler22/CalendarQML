@@ -1,47 +1,91 @@
 import QtQuick 2.4
 import Ubuntu.Components 1.3
 
+
+/*!
+    \brief MainView with Tabs element.
+           First Tab has a single Label and
+           second Tab has a single ToolbarAction.
+*/
+
 MainView {
+    // objectName for functional testing purposes (autopilot-qt5)
     objectName: "mainView"
-    applicationName: "Kalendarz intymny"
+
+    // Note! applicationName needs to match the "name" field of the click manifest
+    applicationName: "nienazwany3.username"
+
+    /*
+     This property enables the application to change orientation
+     when the device is rotated. The default is false.
+    */
+    //automaticOrientation: true
+
 
     width: units.gu(100)
     height: units.gu(75)
 
-    Component {
-            id: settingsComponent
-            Page {
-                title: i18n.tr("Ustawienia")
-                Label {
-                    anchors.centerIn: parent
-                    text: i18n.tr("Ustawienia")
+    Tabs {
+        Tab {
+            title: "Strona główna"
+            Page{
+                title: "Strona główna"
+                Rectangle {
+                    width: units.gu(100)
+                    height: units.gu(75)
+                    color: "red" }
+            }
+
+
+        }
+        Tab {
+            title: "Widok miesiąca"
+            Page{
+                 title: "Blue"
+                 Rectangle { color: "blue"
+                     width: units.gu(100)
+                     height: units.gu(75)}
+            }
+
+
+        }
+        Tab {
+            title: "Statystyki"
+            Page{
+                title: "Statystyki"
+                Rectangle { color: "green"
+                    width: units.gu(100)
+                    height: units.gu(75)
                 }
             }
+
+
+        }
+        Tab {
+            title: "Oś czasu"
+            Page{
+                title: "Oś czasu"
+                Rectangle { color: "green"
+                    width: units.gu(100)
+                    height: units.gu(75)
+                }
+            }
+
+
         }
 
-        Tabs {
-            id: tabs
-            Tab {
-                title: i18n.tr("Strona główna")
-                page: Page {
-                    title: i18n.tr("Strona główna")
-                    anchors.fill: parent;
-                    }
-                    Label {
-                        anchors.centerIn: parent
-                        text: i18n.tr("Strona główna")
-                    }
-            }
-            Tab {
-                id: settingsTab
-                title: i18n.tr("Ustawienia")
-                active: true
-                page: Loader {
-                    // no anchors
-                    id: loader
-                    sourceComponent: tabs.selectedTab == settingsTab ? settingsComponent : null
+        Tab {
+            title: "Ustawienia"
+            Page{
+                title: "Ustawienia"
+                Rectangle { color: "green"
+                    width: units.gu(100)
+                    height: units.gu(75)
                 }
             }
+
+
         }
+    }
 }
 
