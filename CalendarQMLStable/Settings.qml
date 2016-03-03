@@ -13,52 +13,29 @@ Page{
             text: "Dzień rozpoczynający tydzień:"
         }
 
-        Rectangle {
-            color: theme.palette.normal.background
-            Component {
-                id: popoverComponent
-                Popover {
-                    id: popover
-                    Column {
-                        id: containerLayout
-                        anchors {
-                            left: parent.left
-                            top: parent.top
-                            right: parent.right
-                        }
-                        ListItem.Header { text: "Wybierz pierwszy dzień tygodnia" }
-                        ListItem.Standard { text: "Poniedziałek" }
-                        ListItem.Standard { text: "Wtorek" }
-                        ListItem.Standard { text: "Środa" }
-                        ListItem.Standard { text: "Czwartek" }
-                        ListItem.Standard { text: "Piątek" }
-                        ListItem.Standard { text: "Sobota" }
-                        ListItem.Standard { text: "Niedziela" }
-                        ListItem.SingleControl {
-                            highlightWhenPressed: false
-                            control: Button {
-                                text: "Do nothing"
-                                anchors {
-                                    fill: parent
-                                    margins: units.gu(1)
-                                }
-                            }
-                        }
-                        ListItem.SingleControl {
-                            highlightWhenPressed: false
-                            control: Button {
-                                text: "Close"
-                                anchors {
-                                    fill: parent
-                                    margins: units.gu(1)
-                                }
-                                onClicked: PopupUtils.close(popover)
-                            }
-                        }
+        Component {
+            id: popoverComponent
+            Popover {
+                id: popover
+                Column {
+                    id: containerLayout
+                    anchors {
+                        left: parent.left
+                        top: parent.top
+                        right: parent.right
                     }
+                    ListItem.Header { text: "Wybierz pierwszy dzień tygodnia" }
+                    ListItem.Standard { text: "Poniedziałek" }
+                    ListItem.Standard { text: "Wtorek" }
+                    ListItem.Standard { text: "Środa" }
+                    ListItem.Standard { text: "Czwartek" }
+                    ListItem.Standard { text: "Piątek" }
+                    ListItem.Standard { text: "Sobota" }
+                    ListItem.Standard { text: "Niedziela" }
                 }
             }
         }
+
         Button {
             id: popoverButton
             text: "Poniedziałek"
@@ -70,44 +47,20 @@ Page{
             text: "Metoda obliczeń średniej okresu:"
         }
 
-        Rectangle {
-            color: theme.palette.normal.background
-            Component {
-                id: popoverComponent1
-                Popover {
-                    id: popover
-                    Column {
-                        id: containerLayout
-                        anchors {
-                            left: parent.left
-                            top: parent.top
-                            right: parent.right
-                        }
-                        ListItem.Header { text: "Metoda obliczeń średniej okresu" }
-                        ListItem.Standard { text: "Wszystkie okresy" }
-                        ListItem.Standard { text: "Ostatnie 5 okresów" }
-                        ListItem.SingleControl {
-                            highlightWhenPressed: false
-                            control: Button {
-                                text: "Do nothing"
-                                anchors {
-                                    fill: parent
-                                    margins: units.gu(1)
-                                }
-                            }
-                        }
-                        ListItem.SingleControl {
-                            highlightWhenPressed: false
-                            control: Button {
-                                text: "Close"
-                                anchors {
-                                    fill: parent
-                                    margins: units.gu(1)
-                                }
-                                onClicked: PopupUtils.close(popover)
-                            }
-                        }
+        Component {
+            id: popoverComponent1
+            Popover {
+                id: popover
+                Column {
+                    id: containerLayout
+                    anchors {
+                        left: parent.left
+                        top: parent.top
+                        right: parent.right
                     }
+                    ListItem.Header { text: "Metoda obliczeń średniej okresu" }
+                    ListItem.Standard { text: "Wszystkie okresy" }
+                    ListItem.Standard { text: "Ostatnie 5 okresów" }
                 }
             }
         }
@@ -117,5 +70,7 @@ Page{
             onClicked: PopupUtils.open(popoverComponent1, popoverButton1)
             anchors.horizontalCenter: parent.horizontalCenter
         }
+
+
     }
 }
