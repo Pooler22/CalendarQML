@@ -7,8 +7,9 @@ import Ubuntu.Components.Popups 1.3
 Page{
     Column {
         anchors.horizontalCenter: parent.horizontalCenter
+        spacing: units.gu(2)
+
         Label {
-            anchors.horizontalCenter: parent.horizontalCenter
             text: "Dzień rozpoczynający tydzień:"
         }
 
@@ -57,66 +58,64 @@ Page{
                     }
                 }
             }
-            Button {
-                anchors.horizontalCenter: parent.horizontalCenter
-                id: popoverButton
-                text: "Wybierz"
-                onClicked: PopupUtils.open(popoverComponent, popoverButton)
-            }
+        }
+        Button {
+            id: popoverButton
+            text: "Poniedziałek"
+            onClicked: PopupUtils.open(popoverComponent, popoverButton)
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
 
-            Label {
-                anchors.horizontalCenter: parent.horizontalCenter
-                text: "Wybierz motodę obliczeń:"
-            }
+        Label {
+            text: "Metoda obliczeń średniej okresu:"
+        }
 
-            Rectangle {
-                color: theme.palette.normal.background
-                Component {
-                    id: popoverComponent1
-                    Popover {
-                        id: popover
-                        Column {
-                            id: containerLayout
-                            anchors {
-                                left: parent.left
-                                top: parent.top
-                                right: parent.right
-                            }
-                            ListItem.Header { text: "Wybierz motodę obliczeń" }
-                            ListItem.Standard { text: "Na podstawie wszystkich okresów" }
-                            ListItem.Standard { text: "Na podstawie ostatnich 5 okresów" }
-                            ListItem.SingleControl {
-                                highlightWhenPressed: false
-                                control: Button {
-                                    text: "Do nothing"
-                                    anchors {
-                                        fill: parent
-                                        margins: units.gu(1)
-                                    }
+        Rectangle {
+            color: theme.palette.normal.background
+            Component {
+                id: popoverComponent1
+                Popover {
+                    id: popover
+                    Column {
+                        id: containerLayout
+                        anchors {
+                            left: parent.left
+                            top: parent.top
+                            right: parent.right
+                        }
+                        ListItem.Header { text: "Metoda obliczeń średniej okresu" }
+                        ListItem.Standard { text: "Wszystkie okresy" }
+                        ListItem.Standard { text: "Ostatnie 5 okresów" }
+                        ListItem.SingleControl {
+                            highlightWhenPressed: false
+                            control: Button {
+                                text: "Do nothing"
+                                anchors {
+                                    fill: parent
+                                    margins: units.gu(1)
                                 }
                             }
-                            ListItem.SingleControl {
-                                highlightWhenPressed: false
-                                control: Button {
-                                    text: "Close"
-                                    anchors {
-                                        fill: parent
-                                        margins: units.gu(1)
-                                    }
-                                    onClicked: PopupUtils.close(popover)
+                        }
+                        ListItem.SingleControl {
+                            highlightWhenPressed: false
+                            control: Button {
+                                text: "Close"
+                                anchors {
+                                    fill: parent
+                                    margins: units.gu(1)
                                 }
+                                onClicked: PopupUtils.close(popover)
                             }
                         }
                     }
                 }
-                Button {
-                    id: popoverButton1
-                    text: "Wybierz"
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    onClicked: PopupUtils.open(popoverComponent1, popoverButton1)
-                }
-
             }
+        }
+        Button {
+            id: popoverButton1
+            text: "Wszystkie okresy"
+            onClicked: PopupUtils.open(popoverComponent1, popoverButton1)
+            anchors.horizontalCenter: parent.horizontalCenter
         }
     }
 }

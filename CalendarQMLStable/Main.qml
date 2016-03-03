@@ -17,7 +17,7 @@ MainView {
           Tab {
             title: "Kalendarz intymny"
             Component.onCompleted: {
-              start.source = "Start.qml"
+              start.source = "Settings.qml"
             }
             page: start
           }
