@@ -63,7 +63,7 @@ Page{
 
         Button {
             id: popoverButton1
-            text: "Wybierz"
+            text: "Rozpocznij okres"
             anchors.horizontalCenter: parent.horizontalCenter
             onClicked: PopupUtils.open(popoverComponent1, popoverButton1)
         }
@@ -88,9 +88,6 @@ Page{
             model: contactModel
             delegate: Text {
                 text: name + " za " + day + " dni"
-            }
-            anchors {
-                margins: units.gu(1)
             }
         }
 
