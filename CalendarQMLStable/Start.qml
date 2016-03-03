@@ -5,6 +5,7 @@ import Ubuntu.Components.Pickers 1.0
 import Ubuntu.Components.Popups 1.3
 
 Page{
+   id: strona
     title: "Strona główna"
     Column {
         anchors.horizontalCenter: parent.horizontalCenter
@@ -49,6 +50,7 @@ Page{
                         ListItem.Standard {
 
                             Button {
+                                id: anuluj
                                 text: "Anuluj"
                                 anchors {
                                     margins: units.gu(1)
@@ -66,13 +68,16 @@ Page{
             text: "Wybierz"
             anchors.horizontalCenter: parent.horizontalCenter
             onClicked: PopupUtils.open(popoverComponent1, popoverButton1)
+            width: strona.width
+
         }
 
         ListModel {
             id: contactModel
             ListElement {
                 name: "Wydarzenie"
-                day: "12"
+                day: "1"
+
             }
             ListElement {
                 name: "Wydarzenie"
@@ -86,11 +91,16 @@ Page{
 
         UbuntuListView {
             model: contactModel
+            anchors.fill: strona
+
             delegate: Text {
                 text: name + " za " + day + " dni"
             }
+
+
             anchors {
                 margins: units.gu(1)
+
             }
         }
 
