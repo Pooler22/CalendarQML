@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=CalendarQML
-Exec=./qtc_device_debughelper.py app "qmlscene %U Main.qml"
-Icon=CalendarQML.png
-Terminal=false
-Type=Application
-X-Ubuntu-Touch=true
-

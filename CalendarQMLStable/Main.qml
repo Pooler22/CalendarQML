@@ -15,9 +15,11 @@ MainView {
     Tabs {
         Loader { id: start }
           Tab {
-              id: mainTab
             title: "Kalendarz intymny"
-            page: (tabs.selectedTab === mainTab) ? Qt.resolvedUrl("Start.qml") : ""
+            Component.onCompleted: {
+              start.source = "Start.qml"
+            }
+            page: start
           }
 
         Loader { id: month }
