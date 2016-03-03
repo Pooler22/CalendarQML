@@ -7,19 +7,17 @@ import Ubuntu.Components.Popups 1.3
 MainView {
     id: mainView
     objectName: "mainView"
-    applicationName: "nienazwany3.username"
-    automaticOrientation: true
-    width: units.gu(100)
-    height: units.gu(75)
+    applicationName: "Kalendarz intymny"
+    automaticOrientation: false
+    width: units.gu(50)
+    height: units.gu(70)
 
     Tabs {
         Loader { id: start }
           Tab {
-            title: "Strona główna"
-            Component.onCompleted: {
-              start.source = "Start.qml"
-            }
-            page: start
+              id: mainTab
+            title: "Kalendarz intymny"
+            page: (tabs.selectedTab === mainTab) ? Qt.resolvedUrl("Start.qml") : ""
           }
 
         Loader { id: month }
