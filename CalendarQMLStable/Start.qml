@@ -65,7 +65,7 @@ Page{
 
         Button {
             id: popoverButton1
-            text: "Wybierz"
+            text: "Rozpocznij okres"
             anchors.horizontalCenter: parent.horizontalCenter
             onClicked: PopupUtils.open(popoverComponent1, popoverButton1)
             width: strona.width
@@ -95,12 +95,6 @@ Page{
 
             delegate: Text {
                 text: name + " za " + day + " dni"
-            }
-
-
-            anchors {
-                margins: units.gu(1)
-
             }
         }
 
