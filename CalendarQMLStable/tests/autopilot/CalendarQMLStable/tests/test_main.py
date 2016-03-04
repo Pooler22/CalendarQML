@@ -2,7 +2,7 @@
 
 from autopilot.matchers import Eventually
 from testtools.matchers import Equals
-from CalendarQML import tests
+from CalendarQMLStable import tests
 
 
 class MainViewTestCase(tests.BaseTestCase):
