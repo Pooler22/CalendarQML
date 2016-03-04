@@ -7,8 +7,17 @@ import Ubuntu.Components.Popups 1.3
 Page{
     id: strona
     title: "Strona główna"
+    property string startPerioid
+    property string endPerioid
+
     Column {
         anchors.horizontalCenter: parent.horizontalCenter
+        Label {
+            text: "Początek okresu: " + startPerioid
+        }
+        Label {
+            text: "Koniec okresu: " + endPerioid
+        }
 
         Rectangle {
             color: theme.palette.normal.background
@@ -23,12 +32,13 @@ Page{
                             top: parent.top
                             right: parent.right
                         }
-                        ListItem.Header { text: "Wybierz datę:" }
+
+                        ListItem.Header { text: "Wybierz datę" }
                         ListItem.Standard {
                             Button {
                                 property date date: new Date()
                                 id: dateButton
-                                text : "Ustaw datę"
+                                text : Qt.formatDateTime(date, "dddd, dd/MMMM/yyyy")
                                 onClicked: PickerPanel.openDatePicker(dateButton, "date", "Days|Months|Years")
                                 anchors {
                                     margins: units.gu(1)
@@ -40,6 +50,7 @@ Page{
                         ListItem.Standard {
                             Button {
                                 text: "Zapisz"
+                                onClicked: startPerioid = dateButton.text, PopupUtils.close(popover)
                                 anchors {
                                     margins: units.gu(1)
                                     fill: parent
@@ -50,8 +61,8 @@ Page{
                         ListItem.Standard {
 
                             Button {
-                                id: anuluj
                                 text: "Anuluj"
+                                onClicked: PopupUtils.close(popover)
                                 anchors {
                                     margins: units.gu(1)
                                     fill: parent
