@@ -10,43 +10,20 @@ import QtQuick.Controls.Styles 1.1
 
 Page{
      title: "Widok miesiąca"
+     property date ovulationDate: new Date()
      Calendar {
          id: calendar
          weekNumbersVisible: true
-         style: CalendarStyle {
-                 gridVisible: false
-                 dayDelegate: Rectangle {
-                     gradient: Gradient {
-                         GradientStop {
-                             position: 0.00
-                             color: styleData.selected ? "#d11141" : (styleData.visibleMonth && styleData.valid ? "#FF3366" : "#666");
-                         }
-                         GradientStop {
-                             position: 1.00
-                             color: styleData.selected ? "#FF3366" : (styleData.visibleMonth && styleData.valid ? "##d11141" : "#666");
-                         }
-                         GradientStop {
-                             position: 1.00
-                             color: styleData.selected ? "#777" : (styleData.visibleMonth && styleData.valid ? "##d11141" : "#666");
-                         }
-                     }
+          anchors.fill: parent
 
-                     Label {
-                         text: styleData.date.getDate()
-                         anchors.centerIn: parent
-                         color: styleData.valid ? "white" : "green"
-                     }
+          dayDelegate: Rectangle
+          {
 
-                     Rectangle {
-                         width: parent.width
-                         height: 1
-                         color: "#fae7ec"
-                         anchors.bottom: parent.bottom
-                     }
-
-
-                 }
-             }
+          Rectangle
+          {
+          }
      }
 
+
+}
 }
