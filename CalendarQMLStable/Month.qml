@@ -4,10 +4,54 @@ import Ubuntu.Components.ListItems 1.3 as ListItem
 import Ubuntu.Components.Pickers 1.0
 import Ubuntu.Components.Popups 1.3
 
+import QtQuick.Controls 1.2
+import QtQuick.Controls.Private 1.0
+import QtQuick.Controls.Styles 1.1
 
 Page{
      title: "Widok miesiąca"
-     Rectangle { color: "blue"
-         width: units.gu(100)
-         height: units.gu(75)}
+     Calendar {
+         id: calendar
+         weekNumbersVisible: true
+         style: CalendarStyle {
+                 gridVisible: false
+                 dayDelegate: Rectangle {
+                     gradient: Gradient {
+                         GradientStop {
+                             position: 0.00
+                             color: styleData.selected ? "#d11141" : (styleData.visibleMonth && styleData.valid ? "#444" : "#666");
+                         }
+                         GradientStop {
+                             position: 1.00
+                             color: styleData.selected ? "#444" : (styleData.visibleMonth && styleData.valid ? "##d11141" : "#666");
+                         }
+                         GradientStop {
+                             position: 1.00
+                             color: styleData.selected ? "#777" : (styleData.visibleMonth && styleData.valid ? "##d11141" : "#666");
+                         }
+                     }
+
+                     Label {
+                         text: styleData.date.getDate()
+                         anchors.centerIn: parent
+                         color: styleData.valid ? "white" : "green"
+                     }
+
+                     Rectangle {
+                         width: parent.width
+                         height: 1
+                         color: "#fae7ec"
+                         anchors.bottom: parent.bottom
+                     }
+
+                     Rectangle {
+                         width: 1
+                         height: parent.height
+                         color: "#fae7ec"
+                         anchors.right: parent.right
+                     }
+                 }
+             }
+     }
+
 }

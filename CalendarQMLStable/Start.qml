@@ -5,7 +5,7 @@ import Ubuntu.Components.Pickers 1.0
 import Ubuntu.Components.Popups 1.3
 
 Page{
-   id: strona
+    id: strona
     title: "Strona główna"
     Column {
         anchors.horizontalCenter: parent.horizontalCenter
@@ -88,15 +88,21 @@ Page{
                 day: "14"
             }
         }
-
-        UbuntuListView {
-            model: contactModel
-            anchors.fill: strona
-
-            delegate: Text {
-                text: name + " za " + day + " dni"
+        Component {
+            id: delegateModel
+            Row {
+                height: units.gu(3)
+                Text { text: name + " za " + day + " dni" }
             }
         }
 
+        UbuntuListView {
+            anchors.top: popoverButton1.bottom
+            height: units.gu(10)
+            model: contactModel
+            delegate: delegateModel
+        }
     }
+
 }
+
