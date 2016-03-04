@@ -11,25 +11,20 @@ import QtQuick.Controls.Styles 1.1
 Page{
 
     title: "Widok miesiąca"
-    property date ovulationDate: (new Date())
-    property date ov: new Date(ovulationDate.getFullYear(), ovulationDate.getMonth(), ovulationDate.getDay()-1);
-    Component.onCompleted: {
-        print(new Date((ovulationDate).setDate(ovulationDate.getDate()-7)));
-        print((new Date(ovulationDate.getTime()-7*(87400000))));
+    property date ovulationDate: new Date()
 
-    }
     function fertile(dataOv)
     {
-        var fertileDays= new Array((new Date(dataOv.getTime()-4*(87400000))),
-                                   (new Date(dataOv.getTime()-3*(87400000))),
-                                   (new Date(dataOv.getTime()-2*(87400000))),
-                                   (new Date(dataOv.getTime()-1*(87400000))),
-                                   dataOv,
-                                   (new Date(dataOv.getTime()+1*(87400000))),
-                                   (new Date(dataOv.getTime()+2*(87400000))),
-                                   (new Date(dataOv.getTime()+3*(87400000))),
-                                   (new Date(dataOv.getTime()+4*(87400000))))
-        return fertileDays
+        return [
+                    (new Date(dataOv.getTime()-4*(87400000))),
+                    (new Date(dataOv.getTime()-3*(87400000))),
+                    (new Date(dataOv.getTime()-2*(87400000))),
+                    (new Date(dataOv.getTime()-1*(87400000))),
+                    dataOv,
+                    (new Date(dataOv.getTime()+1*(87400000))),
+                    (new Date(dataOv.getTime()+2*(87400000))),
+                    (new Date(dataOv.getTime()+3*(87400000))),
+                    (new Date(dataOv.getTime()+4*(87400000)))]
     }
 
     Calendar {
@@ -52,29 +47,29 @@ Page{
             Qt.formatDateTime(fertileArray[7],"dd:MM:yyyy").indexOf(Qt.formatDateTime(styleData.date,"dd:MM:yyyy")) > -1,
             Qt.formatDateTime(fertileArray[8],"dd:MM:yyyy").indexOf(Qt.formatDateTime(styleData.date,"dd:MM:yyyy")) > -1]
         Component.onCompleted: {
-              print(styleData.date.getDate())
-          }
+            print(styleData.date.getDate())
+        }
         gradient: Gradient {
             GradientStop {
                 position: 0.00
                 color: styleData.selected ? "#442" : (ovulationDay ? "#CC0033" : ((fertileArrayDays[0] || fertileArrayDays[1] || fertileArrayDays[2] ||
                                                                                    fertileArrayDays[3] ||
 
-                                                                                     fertileArrayDays[5] ||
-                                                                                      fertileArrayDays[6] ||
-                                                                                       fertileArrayDays[7] ||
-                                                                                        fertileArrayDays[8]) ? "#FF3366" : (styleData.visibleMonth && styleData.valid ? "#444" : "#666")))
+                                                                                   fertileArrayDays[5] ||
+                                                                                   fertileArrayDays[6] ||
+                                                                                   fertileArrayDays[7] ||
+                                                                                   fertileArrayDays[8]) ? "#FF3366" : (styleData.visibleMonth && styleData.valid ? "#444" : "#666")))
             }
 
             GradientStop {
                 position: 1.00
                 color: styleData.selected ? "#442" : (ovulationDay ?  "#CC0033" : ((fertileArrayDays[0] || fertileArrayDays[1] || fertileArrayDays[2] ||
-                                                                                   fertileArrayDays[3] ||
+                                                                                    fertileArrayDays[3] ||
 
-                                                                                     fertileArrayDays[5] ||
-                                                                                      fertileArrayDays[6] ||
-                                                                                       fertileArrayDays[7] ||
-                                                                                        fertileArrayDays[8]) && styleData.visibleMonth  ? "#FF99CC"  : (styleData.visibleMonth && styleData.valid ? "#444" : "#666")))
+                                                                                    fertileArrayDays[5] ||
+                                                                                    fertileArrayDays[6] ||
+                                                                                    fertileArrayDays[7] ||
+                                                                                    fertileArrayDays[8]) && styleData.visibleMonth  ? "#FF99CC"  : (styleData.visibleMonth && styleData.valid ? "#444" : "#666")))
             }
         }
 
