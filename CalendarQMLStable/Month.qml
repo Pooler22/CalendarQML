@@ -44,12 +44,7 @@ Page{
                          anchors.bottom: parent.bottom
                      }
 
-                     Rectangle {
-                         width: 1
-                         height: parent.height
-                         color: "#fae7ec"
-                         anchors.right: parent.right
-                     }
+
                  }
              }
      }
