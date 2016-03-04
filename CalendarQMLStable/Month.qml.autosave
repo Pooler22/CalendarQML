@@ -27,7 +27,7 @@ Page{
                          }
                          GradientStop {
                              position: 1.00
-                             color: styleData.selected ? "#777" : (styleData.visibleMonth && styleData.valid ? "##d11141" : "#666");
+                             color:  styleData.index ? "#777" : (styleData.visibleMonth && styleData.valid ? "##d11141" : "#666");
                          }
                      }
 
