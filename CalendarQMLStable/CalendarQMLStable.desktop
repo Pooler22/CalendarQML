@@ -1,0 +1,8 @@
+[Desktop Entry]
+_Name=CalendarQMLStable
+Exec=qmlscene %U CalendarQMLStable/Main.qml
+Icon=CalendarQMLStable/CalendarQMLStable.png
+Terminal=false
+Type=Application
+X-Ubuntu-Touch=true
+
