@@ -52,20 +52,14 @@ Page {
             id: perioidDaysValue
             model: setRange(3,10)
             delegate: PickerDelegate {
-                Label {
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    text: modelData
-                }
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: modelData
             }
         }
 
         Button{
             id: accept
-                text: qsTr("OK")
-
+            text: qsTr("OK")
         }
     }
-
 }
-
-

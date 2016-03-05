@@ -8,65 +8,65 @@ import "storage.js" as Storage
 MainView {
     id: mainView
     objectName: "mainView"
-    applicationName: "Kalendarz intymny"
     automaticOrientation: false
     width: units.gu(50)
     height: units.gu(70)
 
+    Loader { id: start }
+    Loader { id: month }
+    Loader { id: statistics }
+    Loader { id: timeline }
+    Loader { id: settings }
+    Loader { id: welcome }
+
     Tabs {
-        Loader { id: start }
-          Tab {
+        Tab {
             title: "Kalendarz intymny"
             Component.onCompleted: {
-              start.source = "Start.qml"
+                start.source = "Start.qml"
             }
             page: start
-          }
+        }
 
-        Loader { id: month }
-          Tab {
+
+        Tab {
             title: "Widok miesiąca"
             Component.onCompleted: {
-              month.source = "Month.qml"
+                month.source = "Month.qml"
             }
             page: month
-          }
+        }
 
-        Loader { id: statistics }
-          Tab {
+        Tab {
             title: "Statystyki"
             Component.onCompleted: {
-              statistics.source = "Statistics.qml"
+                statistics.source = "Statistics.qml"
             }
             page: statistics
-          }
+        }
 
-        Loader { id: timeline }
-          Tab {
+        Tab {
             title: "Oś czasu"
             Component.onCompleted: {
-              timeline.source = "Timeline.qml"
+                timeline.source = "Timeline.qml"
             }
             page: timeline
-          }
+        }
 
-          Loader { id: settings }
-            Tab {
-              title: "Ustawienia"
-              Component.onCompleted: {
+        Tab {
+            title: "Ustawienia"
+            Component.onCompleted: {
                 settings.source = "Settings.qml"
-              }
-              page: settings
             }
+            page: settings
+        }
 
-            Loader { id: welcome }
-              Tab {
-                title: "Welcome"
-                Component.onCompleted: {
-                  welcome.source = "Welcome.qml"
-                }
-                page: welcome
-              }
-
+        Tab {
+            title: "Welcome"
+            Component.onCompleted: {
+                welcome.source = "Welcome.qml"
+            }
+            page: welcome
+        }
     }
 }
