@@ -5,7 +5,7 @@ import Ubuntu.Components.Pickers 1.0
 import Ubuntu.Components.Popups 1.3
 
 Page{
-    id: strona
+    id: root
     title: "Strona główna"
     property string startPerioid
     property bool perioid: false
@@ -107,7 +107,7 @@ Page{
 
             anchors.horizontalCenter: parent.horizontalCenter
             onClicked: PopupUtils.open(popoverComponent1, popoverButton1)
-            width: strona.width
+            width: root.width
         }
 
         Component {
@@ -132,4 +132,5 @@ Page{
 
         }
     }
+
 }

@@ -34,4 +34,5 @@ desktop_file.CONFIG += no_check_exist
 INSTALLS+=config_files qml_files desktop_file
 
 DISTFILES += \
-Welcome.qml
+Welcome.qml \
+    próba.qml
