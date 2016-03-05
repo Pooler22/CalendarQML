@@ -6,9 +6,6 @@ import Ubuntu.Components.Popups 1.3
 
 Page {
     title: "Welcome"
-
-    Column{
-
     function setRange(minValue,maxValue){
         var tmpArray = []
         for (var i = minValue; i <= maxValue; i++) {
@@ -16,6 +13,10 @@ Page {
         }
         return tmpArray
     }
+
+    Column{
+
+
 
         anchors.horizontalCenter: parent.horizontalCenter
         Label{
@@ -47,6 +48,7 @@ Page {
                 }
             }
         }
+
         Button{
             id: accept
                 text: qsTr("OK")

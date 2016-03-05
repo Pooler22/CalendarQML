@@ -123,13 +123,12 @@ Page{
             }
         }
 
-        ScrollView {
             ListView {
                 anchors.top: popoverButton1.bottom
                 anchors.bottom: parent.bottom
                 model: perioids
                 delegate: delegateModel
-            }
+
         }
     }
 }
