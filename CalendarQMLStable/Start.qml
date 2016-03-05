@@ -16,6 +16,7 @@ Page{
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.fill: parent
 
+
         Label {
             id: start
             visible: false

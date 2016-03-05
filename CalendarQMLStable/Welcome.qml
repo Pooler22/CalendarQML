@@ -6,6 +6,7 @@ import Ubuntu.Components.Popups 1.3
 
 Page {
     title: "Welcome"
+
     function setRange(minValue,maxValue){
         var tmpArray = []
         for (var i = minValue; i <= maxValue; i++) {
@@ -17,10 +18,18 @@ Page {
     Column{
 
 
-
+        spacing: units.gu(2)
         anchors.horizontalCenter: parent.horizontalCenter
         Label{
             text: "Data ostatniego okresu"
+
+        }
+        Button {
+            property date date: new Date()
+            id: dateButton
+            text : Qt.formatDateTime(date, "dddd, dd/MMMM/yyyy")
+            onClicked: PickerPanel.openDatePicker(dateButton, "date", "Days|Months|Years")
+
         }
         Label{
             text: "Średni czas trwania cyklu"
@@ -28,6 +37,7 @@ Page {
         Picker {
             id: cycleDaysValue
             model: setRange(21,40)
+
             delegate: PickerDelegate {
                 Label {
                     anchors.horizontalCenter: parent.horizontalCenter
@@ -57,4 +67,5 @@ Page {
     }
 
 }
+
 
