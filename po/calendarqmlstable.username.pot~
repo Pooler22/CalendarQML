@@ -9,10 +9,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 <<<<<<< HEAD
-"POT-Creation-Date: 2016-03-04 11:18+0100\n"
+"POT-Creation-Date: 2016-03-05 12:34+0100\n"
 =======
-"POT-Creation-Date: 2016-03-04 10:55+0100\n"
->>>>>>> 4d4df82f6dd8de64eb08a2f632ee25dc7123d895
+"POT-Creation-Date: 2016-03-04 20:45+0100\n"
+>>>>>>> f3b488361c8f37f8bfee451541c3adf655ed4af1
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,6 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: /home/pooler/build-CalendarQMLStable-Desktop-Release/CalendarQMLStable/CalendarQMLStable.desktop.h:1
+#: /home/klaudia/build-CalendarQMLStable-Desktop-Debug/CalendarQMLStable/CalendarQMLStable.desktop.h:1
 msgid "CalendarQMLStable"
 msgstr ""
