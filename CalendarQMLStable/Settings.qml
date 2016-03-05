@@ -13,64 +13,40 @@ Page{
             text: "Dzień rozpoczynający tydzień:"
         }
 
-        Component {
-            id: popoverComponent
-            Popover {
-                id: popover
-                Column {
-                    id: containerLayout
-                    anchors {
-                        left: parent.left
-                        top: parent.top
-                        right: parent.right
+        ComboButton {
+            id: combo1
+            text: "Dzień rozpoczynający tydzień:"
+            expanded: false
+            UbuntuListView {
+                width: parent.width
+                height: combo1.comboListHeight
+                model: ["Poniedziałek","Wtorek","Środa","Czwartek","Piątek","Sobota","Niedziela"]
+                delegate: ListItem.Standard {
+                    text: modelData
+                    onClicked: {
+                        combo1.text = "Dzień rozpoczynający tydzień: " + "<b>" + text + "</b>";
+                        combo1.expanded = false;
                     }
-                    ListItem.Header { text: "Wybierz pierwszy dzień tygodnia" }
-                    ListItem.Standard { text: "Poniedziałek" }
-                    ListItem.Standard { text: "Wtorek" }
-                    ListItem.Standard { text: "Środa" }
-                    ListItem.Standard { text: "Czwartek" }
-                    ListItem.Standard { text: "Piątek" }
-                    ListItem.Standard { text: "Sobota" }
-                    ListItem.Standard { text: "Niedziela" }
                 }
             }
         }
 
-        Button {
-            id: popoverButton
-            text: "Poniedziałek"
-            onClicked: PopupUtils.open(popoverComponent, popoverButton)
-            anchors.horizontalCenter: parent.horizontalCenter
-        }
-
-        Label {
+        ComboButton {
+            id: combo
             text: "Metoda obliczeń średniej okresu:"
-        }
-
-        Component {
-            id: popoverComponent1
-            Popover {
-                id: popover
-                Column {
-                    id: containerLayout
-                    anchors {
-                        left: parent.left
-                        top: parent.top
-                        right: parent.right
+            expanded: false
+            UbuntuListView {
+                width: parent.width
+                height: combo.comboListHeight
+                model: ["Wszystkie okresy","Ostatnie 5 okresów"]
+                delegate: ListItem.Standard {
+                    text: modelData
+                    onClicked: {
+                        combo.text = "Dzień rozpoczynający tydzień: " + "<b>" + text + "</b>";
+                        combo.expanded = false;
                     }
-                    ListItem.Header { text: "Metoda obliczeń średniej okresu" }
-                    ListItem.Standard { text: "Wszystkie okresy" }
-                    ListItem.Standard { text: "Ostatnie 5 okresów" }
                 }
             }
         }
-        Button {
-            id: popoverButton1
-            text: "Wszystkie okresy"
-            onClicked: PopupUtils.open(popoverComponent1, popoverButton1)
-            anchors.horizontalCenter: parent.horizontalCenter
-        }
-
-
     }
 }

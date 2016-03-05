@@ -5,8 +5,6 @@ import QtQuick.Controls 1.2
 import QtQuick.Controls.Styles 1.1
 
 Page{
-
-    title: "Widok miesiąca"
     property date ovulationDate: new Date()
 
     function fertile(dataOv)

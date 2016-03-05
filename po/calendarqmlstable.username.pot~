@@ -9,10 +9,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 <<<<<<< HEAD
-"POT-Creation-Date: 2016-03-05 12:32+0100\n"
+"POT-Creation-Date: 2016-03-05 17:15+0100\n"
 =======
-"POT-Creation-Date: 2016-03-05 12:46+0100\n"
->>>>>>> dev
+"POT-Creation-Date: 2016-03-05 18:14+0100\n"
+>>>>>>> 2d51bddd8a463bdd1840e30c61dd7aaa7a82891f
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"

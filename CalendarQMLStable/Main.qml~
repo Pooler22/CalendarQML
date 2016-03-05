@@ -20,9 +20,11 @@ MainView {
         Tab {
             title: "Kalendarz intymny"
             Component.onCompleted: {
-
+<<<<<<< HEAD
+              start.source = "próba.qml"
+=======
                 start.source = "Start.qml"
-
+>>>>>>> 2d51bddd8a463bdd1840e30c61dd7aaa7a82891f
             }
             page: start
         }

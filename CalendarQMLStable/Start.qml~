@@ -121,7 +121,7 @@ Page{
                 else{
                     return "Rozpocznij okres"
                 }
-
+<<<<<<< HEAD
 
             anchors.horizontalCenter: parent.horizontalCenter
             onClicked: PopupUtils.open(popoverComponent1, popoverButton1)
@@ -139,7 +139,8 @@ Page{
                     text: "koniec: " + modelData.end
                     anchors.horizontalCenter: parent.horizontalCenter
                 }
-
+=======
+>>>>>>> 2d51bddd8a463bdd1840e30c61dd7aaa7a82891f
             }
         }
 
