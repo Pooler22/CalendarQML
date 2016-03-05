@@ -34,5 +34,9 @@ desktop_file.CONFIG += no_check_exist
 INSTALLS+=config_files qml_files desktop_file
 
 DISTFILES += \
+<<<<<<< HEAD
     Welcome.qml
+=======
+    storage.js
+>>>>>>> f3b488361c8f37f8bfee451541c3adf655ed4af1
 
