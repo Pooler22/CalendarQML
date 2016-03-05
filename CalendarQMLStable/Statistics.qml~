@@ -7,7 +7,13 @@ import "storage.js" as Storage
 
 Page{
     title: "Statystyki"
+<<<<<<< HEAD
+    Rectangle { color: "green"
+        width: units.gu(100)
+        height: units.gu(75)
+    }
 
+=======
     Component.onCompleted: {
             textlabel.text = Storage.get("labeltext", "Hello World")
         }
@@ -31,6 +37,6 @@ Page{
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: textinput.bottom
         }
-
+>>>>>>> dev
 
 }
