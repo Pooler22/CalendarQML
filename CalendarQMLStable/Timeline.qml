@@ -7,8 +7,35 @@ import Ubuntu.Components.Popups 1.3
 
 Page{
     title: "Oś czasu"
-    Rectangle { color: "green"
-        width: units.gu(100)
-        height: units.gu(75)
+
+    function setRange(minValue,maxValue){
+        var tmpArray = []
+        for (var i = minValue; i <= maxValue; i++) {
+            tmpArray.push(i)
+        }
+        return tmpArray
     }
+
+    Picker {
+        id: cycleDaysValue
+        model: setRange(21,40)
+        delegate: PickerDelegate {
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: modelData
+            }
+        }
+    }
+
+    Picker {
+        id: perioidDaysValue
+        model: setRange(3,10)
+        delegate: PickerDelegate {
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: modelData
+            }
+        }
+    }
+
 }
