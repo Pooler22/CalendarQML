@@ -57,5 +57,15 @@ MainView {
               }
               page: settings
             }
+
+            Loader { id: welcome }
+              Tab {
+                title: "Welcome"
+                Component.onCompleted: {
+                  welcome.source = "Welcome.qml"
+                }
+                page: welcome
+              }
+
     }
 }
