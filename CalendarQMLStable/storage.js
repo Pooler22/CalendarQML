@@ -4,7 +4,6 @@ function getDatabase() {
     return Storage.LocalStorage.openDatabaseSync("WomenCalendar", "0.1", "WomenCalendarDatabase", 100);
 }
 
-
 function set(setting, value) {
     var db = getDatabase();
     var res = "";
