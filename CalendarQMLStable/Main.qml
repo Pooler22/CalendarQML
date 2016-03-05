@@ -3,6 +3,7 @@ import Ubuntu.Components 1.3
 import Ubuntu.Components.ListItems 1.3 as ListItem
 import Ubuntu.Components.Pickers 1.0
 import Ubuntu.Components.Popups 1.3
+import "storage.js" as Storage
 
 MainView {
     id: mainView
@@ -57,5 +58,15 @@ MainView {
               }
               page: settings
             }
+
+            Loader { id: welcome }
+              Tab {
+                title: "Welcome"
+                Component.onCompleted: {
+                  welcome.source = "Welcome.qml"
+                }
+                page: welcome
+              }
+
     }
 }
