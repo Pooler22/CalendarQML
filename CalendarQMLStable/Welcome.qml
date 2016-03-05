@@ -8,6 +8,15 @@ Page {
     title: "Welcome"
 
     Column{
+
+    function setRange(minValue,maxValue){
+        var tmpArray = []
+        for (var i = minValue; i <= maxValue; i++) {
+            tmpArray.push(i)
+        }
+        return tmpArray
+    }
+
         anchors.horizontalCenter: parent.horizontalCenter
         Label{
             text: "Data ostatniego okresu"
@@ -15,8 +24,28 @@ Page {
         Label{
             text: "Średni czas trwania cyklu"
         }
+        Picker {
+            id: cycleDaysValue
+            model: setRange(21,40)
+            delegate: PickerDelegate {
+                Label {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    text: modelData
+                }
+            }
+        }
         Label{
             text: "Długość trwania miesiączki"
+        }
+        Picker {
+            id: perioidDaysValue
+            model: setRange(3,10)
+            delegate: PickerDelegate {
+                Label {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    text: modelData
+                }
+            }
         }
         Button{
             id: accept
