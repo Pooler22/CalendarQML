@@ -122,26 +122,10 @@ Page{
                     return "Rozpocznij okres"
                 }
 
+}
 
-            anchors.horizontalCenter: parent.horizontalCenter
-            onClicked: PopupUtils.open(popoverComponent1, popoverButton1)
-            width: root.width
         }
 
-        Component {
-            id: delegateModel
-            Column {
-                Label {
-                    text: "start: " + modelData.start
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
-                Label {
-                    text: "koniec: " + modelData.end
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
-
-            }
-        }
 
         ListView {
             anchors.top: popoverButton1.bottom

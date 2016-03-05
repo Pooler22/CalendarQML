@@ -31,7 +31,7 @@ MainView {
         Tab {
             title: "Widok miesiąca"
             Component.onCompleted: {
-                month.source = "Month.qml"
+                month.source = "próba.qml"
             }
             page: month
         }
